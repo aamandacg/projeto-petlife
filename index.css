@@ -1,0 +1,190 @@
+* { /* *: É aplicado a todos os elementos do documento. */
+    box-sizing: border-box;
+    font-family: 'Montserrat' , sans-serif; /* Fonte utilizada // Depois da vírgula (opcional): segunda opção de fonte caso a primeira não funcione. */
+    margin: 0; /* MARGIN: é o espaçamento da margem de fora. */
+    padding: 0; /* PADDING: é o espaçamento da margem de dentro. */
+}
+
+body { /* CORPO DA PÁGINA */
+    color: #263138 /*cor das letras da página*/
+
+}
+
+header { /* CABEÇALHO */
+    background-color: #FF9A6C; /*cor do fundo da página*/
+    /* DISPLAY: EXIBIÇÃO DO ELEMENTO, FORMATO COMO ELE EXIBE AS COISAS QUE ESTÃO DENTRO DELE. */
+    display: flex; /* flex: flexível = ATIVAR AS PROPRIEDADES align-items: E justify-content. */
+    align-items: center; /* ALINHAR ITENS = CENTER: CENTRO // MOVIMENTO VERTICAL DOS ITENS.*/
+    justify-content: space-between; /* Justificar o conteúdo dentro do elemento = MOVIMENTO HORIZONTAL DOS ITENS. // space-between = espaçar ENTRE os elementos...*/
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+header nav a { /* HEADER: CABEÇALHO = QUERO MUDAR APENAS OQ ESTÁ NO CABEÇALHO. */
+    color: white;
+    font-weight: 600; /* negrito */
+    padding: 32px; /* separação dos ícones */
+    text-decoration: none; /* tirar o _ dos ícones */
+}
+
+#inicio { /* # serve para selecionar o id que você quer do html. */
+    display: flex;
+    align-items: center; /* centralizar o texto no centro. */
+    gap: 32px; /* espaço entre a imagem inicial e o texto inicial. */
+    padding: 24px 80px 128px 80px; /* topo, direita, baixo, esquerda = ordem do padding para não ter que fazer um a um. */
+    position: relative;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+    font-size: 32px; /* tamanho da fonte */
+    margin-bottom: 32px; /* espaço entre o título e o parágrafo */
+}
+
+.paragrafo {
+    line-height: 150%; /* altura de linha */
+    margin-bottom: 32px;
+}
+
+.botao {
+    background-color: #FF725E; /* cor de fundo */
+    border-radius: 8px; /* arredondar a borta */
+    color: white;
+    padding: 16px 32px; /* vertical, horizontal */
+    text-decoration: none;
+
+}
+
+.botao-transparente {
+    background-color: transparent;
+    color: #FF725E;
+    padding: 16px 32px;
+    text-underline-offset: 4px; /* espaçamento entre o sublinhado e a palavra que ele está sublinhando. */
+}
+
+.absolute {
+    position: absolute; /*Posicionar o elemento de forma absoluta. */
+    bottom: 0; /* Imagem vai ficar no fundo */
+    left: 0; /* Imagem para a esquerda */
+    width: 100%; /* Vai ocupar a largura inteira da página. */
+    z-index: -10; /* Posição de profundidade do elemento, valor negativo joga para trás dos outros elementos. */
+}
+
+#clinica {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+#clinica li {   /* Listas da aba clinica */
+    margin-bottom: 16px; /* Margem embaixo */
+    margin-left: 32px; /* Margem à esquerda */
+}
+
+#farmacia {
+    padding: 64px 80px;
+    text-align: center;
+
+}
+
+#farmacia img { /* Imagem da aba farmácia. */
+    margin: 64px auto; /* Margem 64px no vertical e na horizontal ficou AUTOMATICA que calcula o valor necessario para que ela se mantenha centralizada.*/
+}
+
+#farmacia .paragrafo {
+    max-width: 950px;   /* Largura máxima: não quero que ultrapasse 960px, posso definir um valor máximo. */  
+    margin: 0 auto; /* O AUTO vai calcular automaticamente tanto a margem da esquerda quanto a da direita e vai deixar elas iguais, fazenndo com que o elemento fique centralizado. */
+}
+
+#duvidas {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+
+}
+
+.duvida { /* Qualquer elemento que tenha a posição absoluta dentro de DUVIDAS vai ficar limitado ao espaço de DÚVIDAS e não a pagina inteira. */
+    position: relative;/
+
+}
+.duvida h3 {
+    border: 2px solid #FF725E; /* Sólida: linha contínua */
+    border-radius: 8px; /* Arredondar borda */
+    cursor: pointer; /* Cursor do mouse MÃOZINHA. */
+    padding: 24px;
+}
+
+.duvida img {
+    position: absolute;
+    top: 32px; /* posição do topo da imagem */
+    right: 24px; /* posição da direita da imagem */
+}
+
+.duvida .paragrafo {
+    border-right: 1px solid #FF725E; /* apenas a borda da direita */
+    border-bottom: 1px solid #FF725E; /* apenas a borda de baixo */
+    border-left: 1px solid #FF725E; /* apenas a borda da esquerda */
+    border-radius: 0 0 8px 8px;
+    margin-top: -8px;
+    padding: 0 24px; /* 0 = vertical 24 = horizontal */
+    height: 0px; /* altura = vai ficar escondido ao carregar a página e só vai aparecer quando clicar no elemento de dúvida = parte do JS */
+    opacity: 0;
+    overflow: hidden; /* Está associado ao controle do comportamento de 'estouro' em tipos de dados // hidden = escondido. */
+    transition: .2s
+}
+
+.duvida.ativa .paragrafo {
+    height: fit-content;
+    opacity: 1;
+    padding: 24px;
+}
+
+footer {
+    background-color: rgba(255, 152, 108, 0.25); /* o último representa o ALFA que é uma "transparência" */
+    display: flex;
+    justify-content: space-between; /* espaçar entre os elementos */
+    gap: 80px;
+    padding: 64px 80px;
+}
+
+footer img,
+footer .titulo {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+footer nav a {
+    color: #263138;
+    display: block; /* flex coloca os elementos na horizontal, o block coloca na vertical "quebrando linha". */
+    margin-bottom: 16px;
+    text-decoration: none;
+
+}
+
+footer p {
+    margin-bottom: 16px;
+    max-width: 350px;
+}
+
+footer p a {
+    color: #FF725E;
+    text-decoration: none;
+
+}
+
+#copyright { /* parte do DESENVOLVEDOR (final da página) */
+    background-color: #263138;
+    color: white;
+    text-align: center;
+    padding: 24px;
+}
+
+#copyright a { /* cor do @ no desenvolvedor */
+    color: #FF9A6C;
+}
